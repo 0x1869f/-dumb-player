@@ -126,7 +126,7 @@ let selectNext =() => {
     if (isRandom -> Signal.get) {
       if (randomOrderNextTracks -> Signal.get -> Array.length > 0) {
         let next = randomOrderNextTracks -> Signal.get -> Array.at(-1)
-        let rest = randomOrderNextTracks -> Signal.get -> Array.slice(~start=0, ~end=randomOrderNextTracks -> Signal.get -> Array.length)
+        let rest = randomOrderNextTracks -> Signal.get -> Array.slice(~start=0, ~end=randomOrderNextTracks -> Signal.get -> Array.length - 1)
 
         Signal.batch(() => {
           randomOrderPrevTracks -> Signal.set([
@@ -160,7 +160,7 @@ let selectPrev = () => {
     if (isRandom -> Signal.get) {
       if (randomOrderPrevTracks -> Signal.get -> Array.length > 0) {
         let nextToPlay = randomOrderPrevTracks -> Signal.get -> Array.at(-1)
-        let rest = randomOrderPrevTracks -> Signal.get -> Array.slice(~start=0, ~end=randomOrderPrevTracks -> Signal.get -> Array.length)
+        let rest = randomOrderPrevTracks -> Signal.get -> Array.slice(~start=0, ~end=randomOrderPrevTracks -> Signal.get -> Array.length - 1)
 
         Signal.batch(() => {
           randomOrderNextTracks -> Signal.set([

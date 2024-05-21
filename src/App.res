@@ -22,7 +22,7 @@ let make = () => {
 
   let addToPlaylist = async (files: array<FileloaderFile.file>) => {
     let audioFiles = await Electron.extractFilesFromDirectories(files)
-    PlaylistStore.setFiles(audioFiles)
+    PlaylistStore.addFiles(audioFiles)
     isFileLoaderOpened -> Signal.set(false)
   }
 
@@ -43,6 +43,12 @@ let make = () => {
         callback: (_) => isFileLoaderOpened -> Signal.set(true),
         conditions: [
           key("KeyO", ~keys=[ShiftKey])
+        ],
+      },
+      {
+        callback: (_) => PlaylistStore.clearFiles(),
+        conditions: [
+          key("KeyL", ~keys=[CtrlKey])
         ],
       }
     ])

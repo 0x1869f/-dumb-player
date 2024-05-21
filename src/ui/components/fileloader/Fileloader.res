@@ -185,8 +185,7 @@ let loadCurrentDir = async (directory: string) => {
       -> Array.join("/")
     )
 
-    FileLoaderFilter.Store.clear()
-    loadCurrentDir(parentDir -> Signal.get)
+    loadCurrentDir(currentDir -> Signal.get)
   }
 
   let moveUp = () => {
@@ -354,18 +353,6 @@ let loadCurrentDir = async (directory: string) => {
 
             nodeId === id
           })
-
-          // if lastNodeIndex > -1 {
-          //   setCurrentNode(_ => lastNode)
-          //   setCurrentNodeIndex(_ => lastNodeIndex)
-          //
-          //   let firstIndex = switch firstScreenIndex {
-          //     | Some(value) => value
-          //     | None => lastNodeIndex
-          //   }
-          //
-          //   setFirstScreenItemIndex(_ => firstIndex)
-          // }
 
           switch lastNodeIndex {
             | Some(index) => {
