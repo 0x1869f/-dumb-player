@@ -1,0 +1,29 @@
+input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 10px;
+    /* cursor: pointer; */
+    border-radius: 0; /* iOS */
+}
+
+:focus {
+    -webkit-appearance: none;
+  border: none;
+  outline: none;
+}
+
+::-webkit-slider-runnable-track {
+    background: #fff;
+}
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0px; /* 1 */
+    height: 10px;
+    background: #fff;
+    box-shadow: -1000px 0 0 1000px #22c55e;
+    border: none; /* 1 */
+}
+

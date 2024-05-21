@@ -1,0 +1,8 @@
+.bash-input {
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+.bash-input::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,10 @@
+.title-grid {
+  display: grid;
+  grid-template-columns: 70px auto;
+}
+
+.track-icon {
+  height: 232px;
+  width: 232px;
+  padding: 4px;
+}

@@ -1,0 +1,14 @@
+#root {
+  user-select: none;
+}
+
+body, html, div {
+  user-select: none;
+}
+
+.filter-container {
+  position: fixed;
+  left: 0;
+  bottom: 90px;
+}
+
